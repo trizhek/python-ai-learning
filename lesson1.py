@@ -1,4 +1,10 @@
 def greeting(name):
-    your_name = input(f"Hello, {name}! You will be an AI developer.")
-    return your_name
-print(greeting("John"))
+    return f"Привет, {name}! Ты будешь ИИ разработчиком."
+    
+
+print(greeting("Артем"))
+
+def add(a, b):
+   return a + b
+
+print(add(5, 3))
