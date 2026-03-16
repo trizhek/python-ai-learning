@@ -23,9 +23,32 @@ def training_loop(epochs):
 
 print(training_loop(5))
 
+def check_loss(loss):
+    if loss < 0.2:
+        return "Отличный результат"
+    elif loss < 0.5:
+        return "Хороший результат"
+    else:
+        return "Нужно продолжить обучение"
+    
+print(check_loss(0.1))
+print(check_loss(0.3))
+print(check_loss(0.6))
+
+
 def training_loop(epochs):
     for epoch in range(1, epochs + 1):
-        loss = 1.0 / epoch  # потеря уменьшается с каждой эпохой
-        print(f"Эпоха {epoch} из {epochs} | Loss: {loss:.4f}")
+        loss = 1.0 / epoch
+        status = check_loss(loss)
+        print(f"Эпоха {epoch} из {epochs} | Loss: {loss:.4f} | {status}")
     return "Обучение завершено."
+
+def check_loss(loss):
+    if loss < 0.2:
+        return "Отличный результат"
+    elif loss < 0.5:
+        return "Хороший результат"
+    else:
+        return "Нужно продолжить обучение"
+
 print(training_loop(5))
